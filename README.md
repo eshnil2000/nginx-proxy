@@ -1,3 +1,21 @@
+# simplest instructions
+### No need to modify /etc/hosts, or to add any additional entries in DNS
+#### Assuming all new containers need to be routed to xxx.proxy.chainapp.live where xxx is unique id:
+#### *add domain in hosting service Manage DNS:
+#### *Host: proxy.chainapp.live 
+#### *Answer: 54.153.84.199
+#### *Host: *.proxy.chainapp.live 
+#### *Answer: 54.153.84.199
+
+```docker network create nginx-proxy
+
+docker run -d --net nginx-proxy -p 80:80 -e HSTS=off -e DEFAULT_HOST=chainapp.live -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
+
+docker run -d --expose 8000 -e VIRTUAL_HOST=hello3.chainapp.live --net nginx-proxy -t jwilder/whoami
+```
+#
+
+
 ### INSTRUCTIONS TO RUN
 ```docker network create nginx-proxy
 
