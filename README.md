@@ -9,9 +9,9 @@
 
 ```docker network create nginx-proxy
 
-docker run -d --net nginx-proxy -p 80:80 -e HSTS=off -e DEFAULT_HOST=chainapp.live -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
+docker run -d --net nginx-proxy -p 80:80 -e HSTS=off -e DEFAULT_HOST=proxy.chainapp.live -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
 
-docker run -d --expose 8000 -e VIRTUAL_HOST=hello3.chainapp.live --net nginx-proxy -t jwilder/whoami
+docker run -d --expose 8000 -e VIRTUAL_HOST=hello6.proxy.chainapp.live --net nginx-proxy -t jwilder/whoami
 ```
 #
 
