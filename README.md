@@ -9,11 +9,27 @@ nano /etc/hosts
 54.153.84.199 hello3
 ```
 
-*add domain in hosting service Manage DNS:
-*Host: hello3.chainapp.live 
-*Answer: 54.153.84.199
+#### *add domain in hosting service Manage DNS:
+#### *Host: hello3.chainapp.live 
+#### *Answer: 54.153.84.199
 
-#
+# Sub-subdomains
+```
+docker run -d --net nginx-proxy -p 80:80 -e HSTS=off -e DEFAULT_HOST=proxy.chainapp.live -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
+
+docker run -d --expose 8000 -e VIRTUAL_HOST=hello6.proxy.chainapp.live --net nginx-proxy -t jwilder/whoami
+
+nano /etc/hosts
+54.153.84.199 hello6
+```
+
+#### *add domain in hosting service Manage DNS:
+#### *Host: hello3.proxy.chainapp.live 
+#### *Answer: 54.153.84.199
+
+# 
+
+
 
 
 ![nginx 1.13](https://img.shields.io/badge/nginx-1.13-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg) [![Build Status](https://travis-ci.org/jwilder/nginx-proxy.svg?branch=master)](https://travis-ci.org/jwilder/nginx-proxy) [![](https://img.shields.io/docker/stars/jwilder/nginx-proxy.svg)](https://hub.docker.com/r/jwilder/nginx-proxy 'DockerHub') [![](https://img.shields.io/docker/pulls/jwilder/nginx-proxy.svg)](https://hub.docker.com/r/jwilder/nginx-proxy 'DockerHub')
