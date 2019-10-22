@@ -15,6 +15,10 @@ docker run -d --expose 8000 -e VIRTUAL_HOST=hello6.proxy.chainapp.live --net ngi
 ```
 #
 
+### REFERENCES:
+*https://itnext.io/run-multiple-isolated-web-applications-on-containers-with-a-single-ip-for-free-52d216f3e810
+*http://jasonwilder.com/blog/2014/03/25/automated-nginx-reverse-proxy-for-docker/
+
 
 ### INSTRUCTIONS TO RUN
 ```docker network create nginx-proxy
