@@ -2,6 +2,8 @@
 ### No need to modify /etc/hosts, or to add any additional entries in DNS
 #### Assuming all new containers need to be routed to xxx.proxy.chainapp.live where xxx is unique id:
 #### *add domain in hosting service Manage DNS:
+
+### IMPORTANT, SET BOTH *.PROXY.CHAINAPP.LIVE AND PROXY.CHAINAPP.LIVE TO POINT TO THE SAME IP ADDRESS 
 #### *Host: proxy.chainapp.live 
 #### *Answer: 54.153.84.199
 #### *Host: *.proxy.chainapp.live 
